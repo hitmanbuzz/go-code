@@ -1,5 +1,8 @@
 //go:build ignore
 
+// This hashmap implementation is for key with data type `string`
+// The hashing function implementation is from: https://cp-algorithms.com/string/string-hashing.html
+
 package main
 
 import "fmt"
