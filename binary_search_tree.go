@@ -123,12 +123,12 @@ func (b *BinaryTree) Delete(item int) {
 
 func main() {
 	a := NewBinaryTree(10)
-	a.Add(&Node{data: 5})
-	a.Add(&Node{data: 8})
-	a.Add(&Node{data: 20})
-	a.Add(&Node{data: 30})
-	a.Add(&Node{data: 35})
-	a.Add(&Node{data: 25})
+	a.Add(NewNode(5))
+	a.Add(NewNode(8))
+	a.Add(NewNode(20))
+	a.Add(NewNode(30))
+	a.Add(NewNode(35))
+	a.Add(NewNode(25))
 
 	fmt.Println("Orignal Total Nodes:", a.size)
 
