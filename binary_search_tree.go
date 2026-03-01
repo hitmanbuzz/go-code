@@ -116,11 +116,9 @@ func (b *BinaryTree) Search(item int) bool {
 	return isFound
 }
 
-func (b *BinaryTree) Delete(item int) *Node {
-	deletedNode := DeleteNode(b.root, item)
-	b.root = deletedNode
+func (b *BinaryTree) Delete(item int) {
+	b.root = DeleteNode(b.root, item)
 	b.size--
-	return deletedNode
 }
 
 func main() {
@@ -139,18 +137,9 @@ func main() {
 
 	// the original node has been remove and change depending on the tree structure
 	fmt.Println("Original Node:", a.root.right.data)
-	deletedNode := a.Delete(20)
-	if deletedNode == nil {
-		fmt.Println("Node not found, unable to delete")
-	} else {
-		fmt.Println("Node deleted")
-	}
-	deletedNode = a.Delete(30)
-	if deletedNode == nil {
-		fmt.Println("Node not found, unable to delete")
-	} else {
-		fmt.Println("Node deleted")
-	}
+
+	a.Delete(20)
+	a.Delete(30)
 
 	fmt.Println(a.root.right.data) // Output: 35
 
