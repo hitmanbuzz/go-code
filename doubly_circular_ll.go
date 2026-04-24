@@ -189,7 +189,7 @@ func (ll *LinkedList[T]) InsertAfter(targetData T, data T) {
 	fmt.Printf("%v not found in Linked List\n", targetData)
 }
 
-func (ll *LinkedList[T]) Search(data any) bool {
+func (ll *LinkedList[T]) Search(data T) bool {
 	if ll.Head == nil {
 		return false
 	}
@@ -206,8 +206,6 @@ func (ll *LinkedList[T]) Search(data any) bool {
 
 	for {
 		if curr.Data == data {
-			curr.Prev.Next = curr.Next
-			curr.Next.Prev = curr.Prev
 			return true
 		}
 
@@ -299,4 +297,7 @@ func main() {
 	ll.PrintForward()
 	ll.InsertAfter(67, 69)
 	ll.PrintForward()
+
+	isFound := ll.Search(67)
+	fmt.Println("Is Found:", isFound)
 }
